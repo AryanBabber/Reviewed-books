@@ -8,7 +8,6 @@ const Navbar = () => {
         <ul className="hidden md:flex">
           <li>Genres</li>
           <li>Get Recommendations</li>
-          <li> </li>
           <li>Your Favorites</li>
         </ul>
       </div>
