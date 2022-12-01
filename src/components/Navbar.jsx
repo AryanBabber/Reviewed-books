@@ -1,18 +1,33 @@
-import React from 'react'
+import React from "react";
+import { SearchIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
-  return (
-    <div className='h-[100px] bg-slate-200 z-10'>
-      <div className='flex items-center justify-between h-full w-full px-2'>
-        <h1 className='text-5xl font-semibold mx-4'>ReBook</h1>
-        <ul className="hidden md:flex">
-          <li>Genres</li>
-          <li>Get Recommendations</li>
-          <li>Your Favorites</li>
-        </ul>
-      </div>
-    </div>
-  )
-}
+	function textbox() {
+		document.getElementById('search-bar').classList.toggle('hidden')
+	}
+	return (
+		<div className="h-[6.25rem] bg-slate-300 dark:bg-slate-800 flex items-center justify-between">
+			<div className="mx-4 cursor-default select-none">
+				<a href="../App.jsx">
+					<h1 className="text-6xl">ReBook</h1>
+				</a>
+			</div>
+			<div className="">
+				<ul className="flex">
+					<li className="cursor-pointer hover:bg-blue-500 mx-4 rounded-2xl hover:shadow-inner hover:shadow-black select-none">Genre</li>
+					<li className="cursor-pointer hover:bg-blue-500 mx-4 rounded-2xl hover:shadow-inner hover:shadow-black select-none">Recommendations</li>
+					<li className="cursor-pointer hover:bg-blue-500 mx-4 rounded-2xl hover:shadow-inner hover:shadow-black select-none">Get a Random book</li>
+					<li>
+						<SearchIcon
+							className="w-6 cursor-pointer"
+							onClick={textbox}
+						/>
+					</li>
+				</ul>
+				<input type="text" className="absolute right-4 mt-8 outline-none indent-4 hidden ease-in-out duration-150" id="search-bar" />
+			</div>
+		</div>
+	);
+};
 
-export default Navbar
+export default Navbar;
